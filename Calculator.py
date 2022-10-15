@@ -1,35 +1,36 @@
-from tkinter import *
+import tkinter as tk
+
+calculation = ''
+# FUNCTIONS
+def clear():
+    global calculation
+    calculation = ''
+    text_result.delete(1.0, "end")
+
+def add_symbols(*symbols):
+    global calculation
+    symbol = str(plus_button.get())
+
+
 
 # create object
-root = Tk()
+root = tk.Tk()
 # name
 root.title("Calculator")
 # geometry size
 root.geometry("300x400")
 # background color
 root.configure(bg='black')
-
-# FUNCTIONS
-def clear():
-
-
+text_result = tk.Text(root, height=2, width=25, font=("Arial", 20))
+text_result.grid(columnspan=5)
 
 
 # BUTTONS
-AC_button = Button(root, text="AC", font="arial 15", bg="darkgrey", fg="white", command=clear)
-plus_minus = Button(root, text="+/-", font="arial 15", bg="darkgrey", fg="white")
-
-# BUTTON PLACES
-AC_button.place(x=10, y=150)
-plus_minus.place(x=60, y=150)
-
-writing_numbers = StringVar()
-enter_numbers = Entry(root, textvariable= writing_numbers, fg='white', font="arial 15", width=30, bg='black')
-enter_numbers.place(x=0, y=110)
-
-
-
-
+ac_button = tk.Button(root, text="AC", width=1, font=("Arial", 20), bg="grey", fg="black", command=clear)
+plus_button = tk.Button(root, width=1, text="+", font=("Arial", 20), bg="grey", fg="black", command=add_symbols)
+# BUTTONS PLACE
+ac_button.place(x=10, y=150)
+plus_button.place(x=60, y=150)
 
 
 root.mainloop()
