@@ -32,17 +32,18 @@ root = Tk()
 # name
 root.title("Calculator")
 # geometry size
-root.geometry("250x347")
+root.geometry("233x344")
 # background color
-root.configure(bg='black')
+root.resizable(False, False)
+root.configure(bg='grey')
 
 text_entry = StringVar()
-button_expression_field = Entry(root, textvariable=text_entry, font=("Arial" "bolt", 20), bg="grey" )
-button_expression_field.place(x=1, y=1, height=147, width=247)
+button_expression_field = Entry(root, textvariable=text_entry, font=("Arial" "bolt", 20), bg="white")
+button_expression_field.place(x=0, y=55, height=25, width=239)
 
 # BUTTONS
 
-ac_button = Button(root, text="AC", font=("Arial" "bolt", 20), bg="darkgrey", fg="black",
+ac_button = Button(root, text="AC", font=("Arial" "bolt", 20), bg="orange", fg="black",
                    command=clear)
 plus_button = Button(root, text="+", font=("Arial" "bolt", 20), bg="darkgrey", fg="black",
                      command=lambda: press_buttons("+"))
@@ -74,27 +75,27 @@ button_0 = Button(root, text="0", font=("Arial" "bolt", 20), bg="darkgrey", fg="
                   command=lambda: press_buttons(0))
 button_comma = Button(root, text=",", font=("Arial" "bolt", 20), bg="darkgrey", fg="black",
                   command=lambda: press_buttons(','))
-button_equal = Button(root, text="=", font=("Arial" "bolt", 20), bg="darkgrey", fg="black",
+button_equal = Button(root, text="=", font=("Arial" "bolt", 20), bg="orange", fg="black",
                   command=press_equal)
 
 # BUTTONS PLACE
-ac_button.place(x=7, y=150, height=35, width=55,)
-plus_button.place(x=67, y=150, height=35, width=55)
-minus_button.place(x=127, y=150, height=35, width=55)
-multiply_button.place(x=187, y=150, height=35, width=55)
-divide_button.place(x=187, y=190, height=35, width=55)
-button_7.place(x=7, y=190, height=35, width=55)
-button_8.place(x=67, y=190, height=35, width=55)
-button_9.place(x=127, y=190, height=35, width=55)
-button_4.place(x=7, y=230, height=35, width=55)
-button_5.place(x=67, y=230, height=35, width=55)
-button_6.place(x=127, y=230, height=35, width=55)
-button_1.place(x=7, y=270, height=35, width=55)
-button_2.place(x=67, y=270, height=35, width=55)
-button_3.place(x=127, y=270, height=35, width=55)
-button_0.place(x=7, y=310, height=35, width=115)
-button_comma.place(x=127, y=310, height=35, width=55)
-button_equal.place(x=187, y=230, height=115, width=55)
+ac_button.place(x=0, y=150, height=35, width=55,)
+plus_button.place(x=60, y=150, height=35, width=55)
+minus_button.place(x=120, y=150, height=35, width=55)
+multiply_button.place(x=180, y=150, height=35, width=55)
+divide_button.place(x=180, y=190, height=35, width=55)
+button_7.place(x=0, y=190, height=35, width=55)
+button_8.place(x=60, y=190, height=35, width=55)
+button_9.place(x=120, y=190, height=35, width=55)
+button_4.place(x=0, y=230, height=35, width=55)
+button_5.place(x=60, y=230, height=35, width=55)
+button_6.place(x=120, y=230, height=35, width=55)
+button_1.place(x=0, y=270, height=35, width=55)
+button_2.place(x=60, y=270, height=35, width=55)
+button_3.place(x=120, y=270, height=35, width=55)
+button_0.place(x=0, y=310, height=35, width=115)
+button_comma.place(x=120, y=310, height=35, width=55)
+button_equal.place(x=180, y=230, height=115, width=55)
 
 
 root.mainloop()
