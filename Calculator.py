@@ -12,9 +12,13 @@ def press_buttons(symbol):
 
 def press_equal():
     global calculation
-    total = str(eval(calculation))
-    text_entry.set(total)
-    calculation = ""
+    try:
+        total = str(eval(calculation))
+        text_entry.set(total)
+        calculation = ""
+    except:
+        text_entry.set('error')
+        calculation = ''
 
 
 def clear():
